@@ -5,11 +5,19 @@
                https://www.springframework.org/schema/beans/spring-beans.xsd">
 
 <!--    <bean id="Car" class="org.example.Car" scope="prototype"></bean>-->
-    <bean id="Car" class="org.example.Car" scope="singleton">
+    <bean id="Car" class="org.example.Car" autowire="byType">
         <property name="brand" value="BMW"/>
-        <constructor-arg value="Snova"/>
+        <property name="model" value="Snova"/>
+<!--        <property name="engine" ref="engine"/>-->
+<!--        <constructor-arg value="Snova" index="1"/>-->
+<!--        <constructor-arg value="BMW" index="2"/>-->
+<!--        <constructor-arg value="Snova" name="brand"/>-->
+<!--        <constructor-arg value="BMW" name="model"/>-->
+
 <!--        <property name="model" value="Snova"/>-->
     </bean>
 
+    <bean id="engine1" class="org.example.VolvoEngine" primary="true"></bean>
+    <bean id="engine2" class="org.example.TataEngine"></bean>
 
 </beans>
